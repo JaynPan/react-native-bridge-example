@@ -3,19 +3,41 @@ PODS:
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
   - DoubleConversion (1.1.6)
+  - EXBrightness (8.3.0):
+    - UMCore
+    - UMPermissionsInterface
   - EXConstants (9.2.0):
     - UMConstantsInterface
+    - UMCore
+  - EXErrorRecovery (1.3.0):
     - UMCore
   - EXFileSystem (9.2.0):
     - UMCore
     - UMFileSystemInterface
+  - EXFont (8.3.0):
+    - UMCore
+    - UMFontInterface
   - EXImageLoader (1.2.0):
     - React-Core
     - UMCore
     - UMImageLoaderInterface
+  - EXKeepAwake (8.3.0):
+    - UMCore
+  - EXLinearGradient (8.3.1):
+    - UMCore
+  - EXLocation (9.0.1):
+    - UMCore
+    - UMPermissionsInterface
+    - UMTaskManagerInterface
   - EXPermissions (9.3.0):
     - UMCore
     - UMPermissionsInterface
+  - EXSplashScreen (0.6.2):
+    - React
+    - UMCore
+  - EXSQLite (8.4.0):
+    - UMCore
+    - UMFileSystemInterface
   - FBLazyVector (0.63.3)
   - FBReactNativeSpec (0.63.3):
     - Folly (= 2020.01.13.00)
@@ -332,10 +354,18 @@ PODS:
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - EXBrightness (from `../node_modules/expo-brightness/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
+  - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
+  - EXFont (from `../node_modules/expo-font/ios`)
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
+  - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - EXLinearGradient (from `../node_modules/expo-linear-gradient/ios`)
+  - EXLocation (from `../node_modules/expo-location/ios`)
   - EXPermissions (from `../node_modules/expo-permissions/ios`)
+  - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
+  - EXSQLite (from `../node_modules/expo-sqlite/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
   - Flipper (~> 0.54.0)
@@ -414,14 +444,30 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+  EXBrightness:
+    :path: "../node_modules/expo-brightness/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
+  EXErrorRecovery:
+    :path: "../node_modules/expo-error-recovery/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
+  EXFont:
+    :path: "../node_modules/expo-font/ios"
   EXImageLoader:
     :path: "../node_modules/expo-image-loader/ios"
+  EXKeepAwake:
+    :path: "../node_modules/expo-keep-awake/ios"
+  EXLinearGradient:
+    :path: "../node_modules/expo-linear-gradient/ios"
+  EXLocation:
+    :path: "../node_modules/expo-location/ios"
   EXPermissions:
     :path: "../node_modules/expo-permissions/ios"
+  EXSplashScreen:
+    :path: "../node_modules/expo-splash-screen/ios"
+  EXSQLite:
+    :path: "../node_modules/expo-sqlite/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
@@ -504,10 +550,18 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
   DoubleConversion: cde416483dac037923206447da6e1454df403714
+  EXBrightness: fe86aede38dceb0df47d7da5505740c8f0900efc
   EXConstants: 6ec1ea4a13ec734c7e2274bc9e5b7408d73007a1
+  EXErrorRecovery: cfb65ec51567cf57a00b2720a2367ac009298319
   EXFileSystem: efd6c0225f90c8b2c85131d578a09e13197e8b70
+  EXFont: 91111ccdce7c739ff51c5fcb484f2dd9a9a4ce45
   EXImageLoader: 0b33400e65955c5510a09afc2f9bb369a81e1c6e
+  EXKeepAwake: 4502a0ed7b7c5135587004e6d118acf8cea055fc
+  EXLinearGradient: 54bec9b1b4940407fc498cab6a0c49c617c8cf54
+  EXLocation: 210d39a6e5d793f9721117a11c0b27dc523a3183
   EXPermissions: 5797c6c72efb411b2bbf502cd5acd841e3ffeefa
+  EXSplashScreen: accde6b1aaa87f395d6c5e0542e23d5c09a549ab
+  EXSQLite: 246074ef810a3b5e41c0cf8cde141adccc3b0f6b
   FBLazyVector: 878b59e31113e289e275165efbe4b54fa614d43d
   FBReactNativeSpec: 7da9338acfb98d4ef9e5536805a0704572d33c2f
   Flipper: be611d4b742d8c87fbae2ca5f44603a02539e365

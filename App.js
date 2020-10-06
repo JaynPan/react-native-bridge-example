@@ -24,6 +24,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import {Constants} from 'react-native-unimodules';
+import * as Brightness from 'expo-brightness';
 
 const App = () => {
   const triggerNativeModule = () => {
@@ -32,11 +33,16 @@ const App = () => {
     }
   };
 
+  const dimBrightness = async () => {
+    const {status} = await Brightness.requestPermissionsAsync();
+    if (status === 'granted') {
+      Brightness.setSystemBrightnessAsync(1);
+    }
+  };
+
   useEffect(() => {
     (async () => {
-      console.log(Constants.systemFonts);
-
-      // setHasPermission(status === 'granted');
+      console.log('EXPO CONSTANT', Constants);
     })();
   }, []);
 
@@ -48,6 +54,7 @@ const App = () => {
           title="click to trigger native module"
           onPress={triggerNativeModule}
         />
+        <Button title="click to dim brightness" onPress={dimBrightness} />
       </SafeAreaView>
     </>
   );
