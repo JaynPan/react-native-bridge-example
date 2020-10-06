@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   Platform,
@@ -23,12 +23,22 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {Constants} from 'react-native-unimodules';
+
 const App = () => {
   const triggerNativeModule = () => {
     if (Platform.OS === 'ios') {
       NativeModules.HelloWorld.ShowMessage('Awesome!its working!', 3);
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      console.log(Constants.systemFonts);
+
+      // setHasPermission(status === 'granted');
+    })();
+  }, []);
 
   return (
     <>
