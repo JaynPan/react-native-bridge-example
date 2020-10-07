@@ -19,8 +19,11 @@ import {
 } from 'react-native';
 import * as Brightness from 'expo-brightness';
 import { Camera } from 'expo-camera';
+import { Provider } from 'react-redux';
 
 import File from '@/components/File';
+import ReduxExample from '@/ReduxExample';
+import store from '@/store';
 
 const App = () => {
   const [hasPermission, setHasPermission] = useState(false);
@@ -52,44 +55,48 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
-        <File />
-        <Button
-          title="click to trigger native modules"
-          onPress={triggerNativeModule}
-        />
-        <Button title="click to dim brightness" onPress={dimBrightness} />
-        <Camera style={{ flex: 1 }} type={type}>
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: 'transparent',
-              flexDirection: 'row',
-              width: '100%',
-              height: 200,
-            }}>
-            <TouchableOpacity
+      <Provider store={store}>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView style={{ flex: 1 }}>
+          <File />
+          <ReduxExample />
+          <Button
+            title="click to trigger native modules"
+            onPress={triggerNativeModule}
+          />
+          <Button title="click to dim brightness" onPress={dimBrightness} />
+          <Camera style={{ flex: 1 }} type={type}>
+            <View
               style={{
-                flex: 0.1,
-                alignSelf: 'flex-end',
-                alignItems: 'center',
-              }}
-              onPress={() => {
-                setType(
-                  type === Camera.Constants.Type.back
-                    ? Camera.Constants.Type.front
-                    : Camera.Constants.Type.back,
-                );
+                flex: 1,
+                backgroundColor: 'transparent',
+                flexDirection: 'row',
+                width: '100%',
+                height: 200,
               }}>
-              <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                {' '}
-                Flip{' '}
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </Camera>
-      </SafeAreaView>
+              <TouchableOpacity
+                style={{
+                  flex: 0.1,
+                  alignSelf: 'flex-end',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  setType(
+                    type === Camera.Constants.Type.back
+                      ? Camera.Constants.Type.front
+                      : Camera.Constants.Type.back,
+                  );
+                }}>
+                <Text
+                  style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
+                  {' '}
+                  Flip{' '}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </Camera>
+        </SafeAreaView>
+      </Provider>
     </>
   );
 };
