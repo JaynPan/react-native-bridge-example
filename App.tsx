@@ -18,20 +18,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import {Constants} from 'react-native-unimodules';
 import * as Brightness from 'expo-brightness';
 import {Camera} from 'expo-camera';
 
 const App = () => {
-  const [hasPermission, setHasPermission] = useState(null);
+  const [hasPermission, setHasPermission] = useState(false);
   const [type, setType] = useState(Camera.Constants.Type.back);
 
   const triggerNativeModule = () => {
@@ -51,7 +42,6 @@ const App = () => {
     (async () => {
       const {status: cameraStatus} = await Camera.requestPermissionsAsync();
       setHasPermission(cameraStatus === 'granted');
-      // console.log('EXPO CONSTANT', Constants);
     })();
   }, []);
 
