@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   Platform,
@@ -17,9 +17,10 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-
 import * as Brightness from 'expo-brightness';
-import {Camera} from 'expo-camera';
+import { Camera } from 'expo-camera';
+
+import File from '@/components/File';
 
 const App = () => {
   const [hasPermission, setHasPermission] = useState(false);
@@ -32,7 +33,7 @@ const App = () => {
   };
 
   const dimBrightness = async () => {
-    const {status} = await Brightness.requestPermissionsAsync();
+    const { status } = await Brightness.requestPermissionsAsync();
     if (status === 'granted') {
       Brightness.setSystemBrightnessAsync(1);
     }
@@ -40,7 +41,7 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      const {status: cameraStatus} = await Camera.requestPermissionsAsync();
+      const { status: cameraStatus } = await Camera.requestPermissionsAsync();
       setHasPermission(cameraStatus === 'granted');
     })();
   }, []);
@@ -52,13 +53,14 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <File />
         <Button
           title="click to trigger native modules"
           onPress={triggerNativeModule}
         />
         <Button title="click to dim brightness" onPress={dimBrightness} />
-        <Camera style={{flex: 1}} type={type}>
+        <Camera style={{ flex: 1 }} type={type}>
           <View
             style={{
               flex: 1,
@@ -80,7 +82,7 @@ const App = () => {
                     : Camera.Constants.Type.back,
                 );
               }}>
-              <Text style={{fontSize: 18, marginBottom: 10, color: 'white'}}>
+              <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
                 {' '}
                 Flip{' '}
               </Text>
