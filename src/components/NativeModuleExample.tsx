@@ -5,6 +5,8 @@ const NativeModuleExample: FC = () => {
   const triggerNativeModule = () => {
     if (Platform.OS === 'ios') {
       NativeModules.HelloWorld.ShowMessage('Awesome!its working!', 3);
+    } else if (Platform.OS === 'android') {
+      NativeModules.ToastModule.showToast('this is a native toast!');
     }
   };
 
