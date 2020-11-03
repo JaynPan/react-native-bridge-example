@@ -8,16 +8,14 @@
 import Foundation
 
 @objc(Counter)
-class Counter: NSObject {
+class Counter: RCTEventEmitter {
   private var count = 0
   
-  @objc
-  static func requiresMainQueueSetup() -> Bool {
+  override static func requiresMainQueueSetup() -> Bool {
     return true
   }
   
-  @objc
-  func constantsToExport() -> [AnyHashable : Any]! {
+  override func constantsToExport() -> [AnyHashable : Any]! {
     return [
       "number": 123.9,
       "string": "foo",
@@ -25,6 +23,12 @@ class Counter: NSObject {
       "array": [1, 22.2, "33"],
       "object": ["a": 1, "b": 2]
     ]
+  }
+  
+  // we need to override this method and
+  // return an array of event names that we can listen to
+  override func supportedEvents() -> [String]! {
+    return ["onCountChange"]
   }
   
   // Passing multiple arguments type
@@ -43,6 +47,7 @@ class Counter: NSObject {
   func increment() {
     count += 1
     print("count is \(count)")
+    sendEvent(withName: "onCountChange", body: ["count": count])
   }
   
   // expose a Swift promise
@@ -57,6 +62,7 @@ class Counter: NSObject {
     } else {
       count -= 1
       resolve(count)
+      sendEvent(withName: "onCountChange", body: ["count": count])
     }
   }
 }

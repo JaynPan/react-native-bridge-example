@@ -1,14 +1,21 @@
-import React, { FC, useState } from 'react';
-import { View, Text, NativeModules, Button } from 'react-native';
+import React, { FC, useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  NativeModules,
+  NativeEventEmitter,
+  Button,
+} from 'react-native';
 
-const Calendar: FC = () => {
-  const { Counter } = NativeModules;
+const { Counter } = NativeModules;
+const CounterEvents = new NativeEventEmitter(Counter);
+
+const CounterComponent: FC = () => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
     Counter.increment();
     Counter.getCount((val: number, ...others: any) => {
-      setCount(val);
       console.log('count is ', val);
       console.log('other arguments ', others);
     });
@@ -16,12 +23,15 @@ const Calendar: FC = () => {
 
   const decrement = async () => {
     try {
-      const result = await Counter.decrement();
-      setCount(result);
+      await Counter.decrement();
     } catch (error) {
       console.log(error.message, error.code);
     }
   };
+
+  useEffect(() => {
+    CounterEvents.addListener('onCountChange', (res) => setCount(res.count));
+  }, []);
 
   return (
     <View>
@@ -33,4 +43,4 @@ const Calendar: FC = () => {
   );
 };
 
-export default Calendar;
+export default CounterComponent;
