@@ -10,4 +10,5 @@
 
 @interface RCT_EXTERN_MODULE(CounterViewManager, RCTViewManager)
 RCT_EXPORT_VIEW_PROPERTY(count, NSNumber)
+RCT_EXPORT_VIEW_PROPERTY(onUpdate, RCTDirectEventBlock)
 @end

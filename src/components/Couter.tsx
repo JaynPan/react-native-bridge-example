@@ -53,6 +53,10 @@ const CounterComponent: FC = () => {
   //   }
   // };
 
+  const handleSwiftCounterLongPressUpdate = (e: any) => {
+    setCount(e.nativeEvent.count);
+  };
+
   useEffect(() => {
     CounterEvents.addListener('onCountChange', (res) => setCount(res.count));
   }, []);
@@ -64,7 +68,11 @@ const CounterComponent: FC = () => {
         onPress={increment}>
         <Text style={styles.button}>{count}</Text>
       </TouchableOpacity>
-      <SwiftCounter style={styles.wrapper} count={3} />
+      <SwiftCounter
+        style={styles.wrapper}
+        count={3}
+        onUpdate={handleSwiftCounterLongPressUpdate}
+      />
     </View>
   );
 };
