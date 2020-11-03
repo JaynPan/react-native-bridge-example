@@ -64,7 +64,7 @@ const CounterComponent: FC = () => {
         onPress={increment}>
         <Text style={styles.button}>{count}</Text>
       </TouchableOpacity>
-      <SwiftCounter style={styles.wrapper} />
+      <SwiftCounter style={styles.wrapper} count={3} />
     </View>
   );
 };

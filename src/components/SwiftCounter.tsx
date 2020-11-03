@@ -7,6 +7,7 @@ import {
 
 interface Props {
   style: StyleProp<ViewStyle>;
+  count: number;
 }
 
 const SwiftCounter: HostComponent<Props> = requireNativeComponent(
