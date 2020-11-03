@@ -54,7 +54,7 @@ const CounterComponent: FC = () => {
   // };
 
   const handleSwiftCounterLongPressUpdate = (e: any) => {
-    setCount(e.nativeEvent.count);
+    Counter.updateCount(e.nativeEvent.count);
   };
 
   useEffect(() => {

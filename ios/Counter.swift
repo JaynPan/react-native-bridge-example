@@ -31,6 +31,12 @@ class Counter: RCTEventEmitter {
     return ["onCountChange"]
   }
   
+  @objc
+  func updateCount(_ val : NSInteger) {
+    count = val;
+    sendEvent(withName: "onCountChange", body: ["count": count])
+  };
+
   // Passing multiple arguments type
   @objc
   func getCount(_ callback: RCTResponseSenderBlock) {
