@@ -26,6 +26,7 @@
 		F48905392551070D00C0B222 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48905382551070D00C0B222 /* Counter.swift */; };
 		F489053F25512A7F00C0B222 /* CounterViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489053E25512A7F00C0B222 /* CounterViewManager.swift */; };
 		F489054525512B1700C0B222 /* CounterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F489054425512B1700C0B222 /* CounterViewManager.m */; };
+		F4890553255134B600C0B222 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4890552255134B600C0B222 /* CounterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F48905382551070D00C0B222 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		F489053E25512A7F00C0B222 /* CounterViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewManager.swift; sourceTree = "<group>"; };
 		F489054425512B1700C0B222 /* CounterViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CounterViewManager.m; sourceTree = "<group>"; };
+		F4890552255134B600C0B222 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		F73FADC1DA1665945537EA1E /* Pods-testing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing.debug.xcconfig"; path = "Target Support Files/Pods-testing/Pods-testing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F4890552255134B600C0B222 /* CounterView.swift */,
 				F489054425512B1700C0B222 /* CounterViewManager.m */,
 				F489053E25512A7F00C0B222 /* CounterViewManager.swift */,
 				F48905382551070D00C0B222 /* Counter.swift */,
@@ -596,6 +599,7 @@
 				F489054525512B1700C0B222 /* CounterViewManager.m in Sources */,
 				F489053F25512A7F00C0B222 /* CounterViewManager.swift in Sources */,
 				F44F55D8252C171900D52F36 /* HelloWorld.m in Sources */,
+				F4890553255134B600C0B222 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

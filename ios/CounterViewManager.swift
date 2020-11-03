@@ -10,9 +10,6 @@ import Foundation
 @objc(CounterViewManager)
 class CounterViewManager: RCTViewManager {
   override func view() -> UIView! {
-    let label = UILabel()
-    label.text = "Swift Counter"
-    label.textAlignment = .center
-    return label
+    return CounterView()
   }
 }
