@@ -24,6 +24,8 @@
 		F44F55D8252C171900D52F36 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = F44F55D7252C171900D52F36 /* HelloWorld.m */; };
 		F48905332550488D00C0B222 /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = F48905322550488D00C0B222 /* Counter.m */; };
 		F48905392551070D00C0B222 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48905382551070D00C0B222 /* Counter.swift */; };
+		F489053F25512A7F00C0B222 /* CounterViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489053E25512A7F00C0B222 /* CounterViewManager.swift */; };
+		F489054525512B1700C0B222 /* CounterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F489054425512B1700C0B222 /* CounterViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		F44F55D7252C171900D52F36 /* HelloWorld.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorld.m; sourceTree = "<group>"; };
 		F48905322550488D00C0B222 /* Counter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 		F48905382551070D00C0B222 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		F489053E25512A7F00C0B222 /* CounterViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewManager.swift; sourceTree = "<group>"; };
+		F489054425512B1700C0B222 /* CounterViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CounterViewManager.m; sourceTree = "<group>"; };
 		F73FADC1DA1665945537EA1E /* Pods-testing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testing.debug.xcconfig"; path = "Target Support Files/Pods-testing/Pods-testing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F489054425512B1700C0B222 /* CounterViewManager.m */,
+				F489053E25512A7F00C0B222 /* CounterViewManager.swift */,
 				F48905382551070D00C0B222 /* Counter.swift */,
 				F48905322550488D00C0B222 /* Counter.m */,
 				F44F55D7252C171900D52F36 /* HelloWorld.m */,
@@ -587,6 +593,8 @@
 				F48905392551070D00C0B222 /* Counter.swift in Sources */,
 				F44F55D2252C16E300D52F36 /* HelloWorld.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				F489054525512B1700C0B222 /* CounterViewManager.m in Sources */,
+				F489053F25512A7F00C0B222 /* CounterViewManager.swift in Sources */,
 				F44F55D8252C171900D52F36 /* HelloWorld.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

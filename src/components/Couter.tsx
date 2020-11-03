@@ -4,11 +4,35 @@ import {
   Text,
   NativeModules,
   NativeEventEmitter,
-  Button,
+  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
+
+import SwiftCounter from '@/components/SwiftCounter';
 
 const { Counter } = NativeModules;
 const CounterEvents = new NativeEventEmitter(Counter);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'stretch',
+    backgroundColor: '#333',
+  },
+  wrapper: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  border: {
+    borderColor: '#eee',
+    borderBottomWidth: 1,
+  },
+  button: {
+    fontSize: 50,
+    color: 'orange',
+  },
+});
 
 const CounterComponent: FC = () => {
   const [count, setCount] = useState(0);
@@ -21,24 +45,26 @@ const CounterComponent: FC = () => {
     });
   };
 
-  const decrement = async () => {
-    try {
-      await Counter.decrement();
-    } catch (error) {
-      console.log(error.message, error.code);
-    }
-  };
+  // const decrement = async () => {
+  //   try {
+  //     await Counter.decrement();
+  //   } catch (error) {
+  //     console.log(error.message, error.code);
+  //   }
+  // };
 
   useEffect(() => {
     CounterEvents.addListener('onCountChange', (res) => setCount(res.count));
   }, []);
 
   return (
-    <View>
-      <Text>Counter</Text>
-      <Button onPress={increment} title="increment" />
-      <Button onPress={decrement} title="decrement" />
-      <Text>Count is {count}</Text>
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={[styles.wrapper, styles.border]}
+        onPress={increment}>
+        <Text style={styles.button}>{count}</Text>
+      </TouchableOpacity>
+      <SwiftCounter style={styles.wrapper} />
     </View>
   );
 };
