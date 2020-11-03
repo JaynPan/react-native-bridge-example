@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
 
 const CounterComponent: FC = () => {
   const [count, setCount] = useState(0);
+  const [swiftCount, setSwiftCount] = useState(3);
 
   const increment = () => {
     Counter.increment();
@@ -57,6 +58,10 @@ const CounterComponent: FC = () => {
     Counter.updateCount(e.nativeEvent.count);
   };
 
+  const handleRNCounterLongPressUpdate = () => {
+    setSwiftCount(count);
+  };
+
   useEffect(() => {
     CounterEvents.addListener('onCountChange', (res) => setCount(res.count));
   }, []);
@@ -65,12 +70,13 @@ const CounterComponent: FC = () => {
     <View style={styles.container}>
       <TouchableOpacity
         style={[styles.wrapper, styles.border]}
-        onPress={increment}>
+        onPress={increment}
+        onLongPress={handleRNCounterLongPressUpdate}>
         <Text style={styles.button}>{count}</Text>
       </TouchableOpacity>
       <SwiftCounter
         style={styles.wrapper}
-        count={3}
+        count={swiftCount}
         onUpdate={handleSwiftCounterLongPressUpdate}
       />
     </View>
